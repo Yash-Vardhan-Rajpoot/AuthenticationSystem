@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,body{
+        height:100%;
+        width:100%;
+    }
+    body{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .sign{
+        margin-left:25px;
+    }
+</style>
+<body>
+ <h1>Login Details</h1>
+ <div class="container">
+    <form action="/submit" method='post'> 
+        <input type="text" name="username" class="name" placeholder="Enter your name here!">
+        <br><br>
+        <input type="password" name="password" class="password" placeholder="Enter your password here!">
+        <button class="icon">👀</button>
+        <br><br>
+        <input type="email" name="email" class="email" placeholder="Enter your email here!">
+        <br><br>
+        <button name="button" value="sign-up" type='submit' class="sign">sign-up</button>
+        <button name="button" value="login" type='submit' class="login">login</button>
+    </form>
+ </div>
+</body>
+<script>
+            const pass=document.querySelector(".password");
+            const icon=document.querySelector(".icon");
+            icon.addEventListener("click",(e)=>{
+                e.preventDefault();
+                if(pass.type==="password"){
+                   icon.textContent="👀";
+                    pass.type="text";
+                }
+                else if(pass.type==="text"){
+                    icon.textContent="🔒";
+                    pass.type="password";
+                }
+            });
+</script>
+</html>
